@@ -28,6 +28,7 @@ coverage
 .env
 .env.*
 .mcp.json
+.storybook
 *storybook.log
 storybook-static
 stories
