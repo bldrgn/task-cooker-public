@@ -4,12 +4,12 @@
   "description": "todo app using a cooking metaphor for task statuses.",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host --open",
     "test": "vitest --passWithNoTests",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build --outDir dist",
     "format": "prettier --write \"./src/**/*.{js,jsx,ts,tsx}\"",
     "lint": "eslint .",
-    "preview": "vite preview",
+    "preview": "vite preview --outDir dist",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
