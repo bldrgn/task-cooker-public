@@ -1,0 +1,222 @@
+@import 'tailwindcss';
+
+@theme {
+  /* Override default font for Japanese support */
+  --font-sans:
+    ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    '游ゴシック体', YuGothic, '游ゴシック Medium', 'Yu Gothic Medium',
+    '游ゴシック', 'Yu Gothic', sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-serif: ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+  --font-mono:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
+    'Courier New', monospace;
+
+  /* App theme colors (Tailwind Orange) */
+  --color-primary-50: oklch(0.98 0.016 73.684);
+  --color-primary-100: oklch(0.954 0.038 75.164);
+  --color-primary-200: oklch(0.901 0.076 70.697);
+  --color-primary-300: oklch(0.837 0.128 66.29);
+  --color-primary-400: oklch(0.75 0.183 55.934);
+  --color-primary-500: oklch(0.705 0.213 47.604);
+  --color-primary-600: oklch(0.646 0.222 41.116);
+  --color-primary-700: oklch(0.553 0.195 38.402);
+  --color-primary-800: oklch(0.47 0.157 37.304);
+  --color-primary-900: oklch(0.408 0.123 38.172);
+  --color-primary-950: oklch(0.266 0.079 36.259);
+
+  /* Secondary colors (Tailwind Blue) */
+  --color-secondary-50: oklch(0.97 0.014 254.604);
+  --color-secondary-100: oklch(0.932 0.032 255.585);
+  --color-secondary-200: oklch(0.882 0.059 254.128);
+  --color-secondary-300: oklch(0.809 0.105 251.813);
+  --color-secondary-400: oklch(0.707 0.165 254.624);
+  --color-secondary-500: oklch(0.623 0.214 259.815);
+  --color-secondary-600: oklch(0.546 0.245 262.881);
+  --color-secondary-700: oklch(0.488 0.243 264.376);
+  --color-secondary-800: oklch(0.424 0.199 265.638);
+  --color-secondary-900: oklch(0.379 0.146 265.522);
+  --color-secondary-950: oklch(0.282 0.091 267.935);
+
+  --color-accent-50: oklch(0.971 0.013 17.38);
+  --color-accent-100: oklch(0.936 0.032 17.717);
+  --color-accent-200: oklch(0.885 0.062 18.334);
+  --color-accent-300: oklch(0.808 0.114 19.571);
+  --color-accent-400: oklch(0.704 0.191 22.216);
+  --color-accent-500: oklch(0.637 0.237 25.331);
+  --color-accent-600: oklch(0.577 0.245 27.325);
+  --color-accent-700: oklch(0.505 0.213 27.518);
+  --color-accent-800: oklch(0.444 0.177 26.899);
+  --color-accent-900: oklch(0.396 0.141 25.723);
+  --color-accent-950: oklch(0.258 0.092 26.042);
+
+  /* Text and background colors (Slate) */
+  --color-text-50: oklch(0.984 0.003 247.858);
+  --color-text-100: oklch(0.968 0.007 247.896);
+  --color-text-200: oklch(0.929 0.013 255.508);
+  --color-text-300: oklch(0.869 0.022 252.894);
+  --color-text-400: oklch(0.704 0.04 256.788);
+  --color-text-500: oklch(0.554 0.046 257.417);
+  --color-text-600: oklch(0.446 0.043 257.281);
+  --color-text-700: oklch(0.372 0.044 257.287);
+  --color-text-800: oklch(0.279 0.041 260.031);
+  --color-text-900: oklch(0.208 0.042 265.755);
+  --color-text-950: oklch(0.129 0.042 265.146);
+
+  /* Status Empty (Slate) */
+  --color-empty-50: oklch(0.984 0.003 247.858);
+  --color-empty-100: oklch(0.968 0.007 247.896);
+  --color-empty-200: oklch(0.929 0.013 255.508);
+  --color-empty-300: oklch(0.869 0.022 252.894);
+  --color-empty-400: oklch(0.704 0.04 256.788);
+  --color-empty-500: oklch(0.554 0.046 257.417);
+  --color-empty-600: oklch(0.446 0.043 257.281);
+  --color-empty-700: oklch(0.372 0.044 257.287);
+  --color-empty-800: oklch(0.279 0.041 260.031);
+  --color-empty-900: oklch(0.208 0.042 265.755);
+  --color-empty-950: oklch(0.129 0.042 265.146);
+
+  /* Status Prep: Bright yellow tones */
+  --color-prep-50: oklch(98% 0.05 100);
+  --color-prep-100: oklch(95% 0.08 100);
+  --color-prep-200: oklch(88% 0.12 95);
+  --color-prep-300: oklch(80% 0.17 90);
+  --color-prep-400: oklch(72% 0.22 85);
+  --color-prep-500: oklch(65% 0.25 80);
+  --color-prep-600: oklch(58% 0.26 80);
+  --color-prep-700: oklch(50% 0.23 75);
+  --color-prep-800: oklch(43% 0.18 70);
+  --color-prep-900: oklch(36% 0.13 65);
+  --color-prep-950: oklch(25% 0.08 60);
+
+  /* Status Cooking: Vibrant orange tones */
+  --color-cooking-50: oklch(98% 0.04 70);
+  --color-cooking-100: oklch(95% 0.07 70);
+  --color-cooking-200: oklch(88% 0.12 68);
+  --color-cooking-300: oklch(80% 0.18 65);
+  --color-cooking-400: oklch(72% 0.25 60);
+  --color-cooking-500: oklch(65% 0.3 55);
+  --color-cooking-600: oklch(58% 0.32 55);
+  --color-cooking-700: oklch(50% 0.28 50);
+  --color-cooking-800: oklch(43% 0.22 45);
+  --color-cooking-900: oklch(36% 0.16 40);
+  --color-cooking-950: oklch(25% 0.1 35);
+
+  /* Status Done: Calm green tones */
+  --color-done-50: oklch(98% 0.02 140);
+  --color-done-100: oklch(95% 0.04 140);
+  --color-done-200: oklch(88% 0.07 145);
+  --color-done-300: oklch(80% 0.12 150);
+  --color-done-400: oklch(72% 0.18 155);
+  --color-done-500: oklch(65% 0.22 160);
+  --color-done-700: oklch(50% 0.21 160);
+  --color-done-800: oklch(43% 0.17 155);
+  --color-done-900: oklch(36% 0.12 150);
+  --color-done-950: oklch(25% 0.08 145);
+
+  --shadow-light: 0 4px 16px rgba(0, 0, 0, 0.1);
+  --shadow-medium: 0 8px 32px rgba(0, 0, 0, 0.1);
+  --shadow-light-dark: 0 4px 16px rgba(0, 0, 0, 0.2);
+  --shadow-medium-dark: 0 8px 32px rgba(0, 0, 0, 0.3);
+
+  --color-success: #4caf50;
+  --color-warning: #ff9800;
+  --color-error: #f44336;
+  --color-info: #2196f3;
+  --color-success-dark: #66bb6a;
+  --color-warning-dark: #ffb74d;
+  --color-error-dark: #ef5350;
+  --color-info-dark: #42a5f5;
+
+  /* TaskCooker Core Radius */
+  --radius: 0.625rem;
+  --taskcooker-radius: 8px;
+  --taskcooker-radius-lg: 16px;
+}
+
+/* Base layer */
+@layer base {
+  :root {
+    --base-text-color: oklch(0.208 0.042 265.755); /* slate 900 */
+    --base-background-color: oklch(0.98 0.016 73.684); /* primary 50 */
+  }
+
+  html.dark {
+    --base-text-color: oklch(0.984 0.003 247.858); /* slate 50 */
+    --base-background-color: oklch(0.208 0.042 265.755); /* slate 900 */
+  }
+
+  body {
+    background-color: var(--base-background-color);
+    color: var(--base-text-color);
+    margin: 0;
+    min-height: 100vh;
+    line-height: 1.5;
+    font-weight: 400;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
+  }
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scrollbar styles */
+.scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #a0a0a0 transparent;
+}
+
+.scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background-color: #a0a0a0;
+  border-radius: 4px;
+}
+
+.dark .scrollbar {
+  scrollbar-color: #606060 transparent;
+}
+
+.dark .scrollbar::-webkit-scrollbar-thumb {
+  background-color: #606060;
+}
