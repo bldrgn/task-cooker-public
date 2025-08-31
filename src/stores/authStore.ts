@@ -1,6 +1,6 @@
 import { Unsubscribe, User, onAuthStateChanged } from 'firebase/auth';
 import { create } from 'zustand';
-import { auth } from '@/api/firebase';
+import { auth } from '@/libs/firebase';
 
 interface AuthState {
   user: User | null;
