@@ -1,8 +1,12 @@
 import React from 'react';
+import { faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
+import { Button as AriaButton } from 'react-aria-components';
 import { Link } from 'react-router';
 import { useNavigate } from 'react-router';
+import Avatar from '@/features/users/components/Avatar';
 import { useAuth } from '@/features/users/hooks/useAuth';
 import PancakeStack3Icon from '@/ui/assets/PancakeStack3Icon';
+import { MenuItemData, PopoverMenu } from '../components/popover/PopoverMenu';
 import { Sidebar } from './Sidebar';
 
 interface HeaderProps {
@@ -23,6 +27,15 @@ export const Header: React.FC<HeaderProps> = ({ hasSidebar }) => {
     }
   };
 
+  const userMenuItems: MenuItemData[] = [
+    {
+      id: 'logout',
+      label: 'ログアウト',
+      icon: faRightFromBracket,
+      onAction: onLogout,
+    },
+  ];
+
   return (
     <header className="fixed top-0 left-0 right-0 z-[100] h-16 not-first:shadow-sm p-4 flex items-center gap-2">
       {hasSidebar && (
@@ -36,7 +49,14 @@ export const Header: React.FC<HeaderProps> = ({ hasSidebar }) => {
       </div>
       <div className="flex item-center gap-2">
         {isAuthenticated ? (
-          <a onClick={onLogout}>ログアウト</a>
+          <PopoverMenu
+            items={userMenuItems}
+            trigger={
+              <AriaButton className="rounded-full">
+                <Avatar />
+              </AriaButton>
+            }
+          />
         ) : (
           <Link to="/login">ログイン</Link>
         )}
