@@ -39,7 +39,7 @@ export type IconButtonProps = AriaButtonProps & {
   variant?: 'primary' | 'outline' | 'transparent';
 };
 
-export type ButtonVariants = VariantProps<typeof iconButtonVariants>;
+export type IconButtonVariants = VariantProps<typeof iconButtonVariants>;
 
 export const IconButton: React.FC<IconButtonProps> = ({
   icon,
