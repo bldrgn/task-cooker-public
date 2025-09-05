@@ -21,7 +21,7 @@ export const MainLayout: React.FC<MainLayoutProps> = ({
     <div className={containerVariants()}>
       {hasSidebar && (
         <div className="hidden lg:block">
-          <aside className="fixed left-0 top-16 h-screen w-64 overflow-y-auto overflow-x-hidden">
+          <aside className="fixed left-0 top-16 h-[calc(100vh-4rem)] w-64 overflow-y-auto overflow-x-hidden scrollbar">
             <Sidebar isLargeScreen={true} />
           </aside>
         </div>

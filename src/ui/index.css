@@ -1,5 +1,6 @@
 @import 'tailwindcss';
 @plugin "tailwindcss-react-aria-components";
+@plugin "tailwind-scrollbar";
 
 @theme {
   /* Override default font for Japanese support */
