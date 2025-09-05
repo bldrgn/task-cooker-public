@@ -56,7 +56,7 @@ export const SidebarContent = () => {
         {projects.map((project) => (
           <li key={project.id}>
             <a
-              href={`/projects/${project.id}`}
+              href={`#`}
               className="block p-2 rounded-md hover:bg-primary-100 dark:hover:bg-base-600 transition-colors duration-200"
             >
               {project.name}

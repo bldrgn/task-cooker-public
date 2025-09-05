@@ -19,11 +19,13 @@ export const MainLayout: React.FC<MainLayoutProps> = ({
 }) => {
   return (
     <div className={containerVariants()}>
-      <div className="hidden lg:block">
-        <aside className="fixed left-0 top-16 h-screen w-64 overflow-y-auto overflow-x-hidden">
-          <Sidebar isLargeScreen={true} />
-        </aside>
-      </div>
+      {hasSidebar && (
+        <div className="hidden lg:block">
+          <aside className="fixed left-0 top-16 h-screen w-64 overflow-y-auto overflow-x-hidden">
+            <Sidebar isLargeScreen={true} />
+          </aside>
+        </div>
+      )}
 
       <div className={`flex flex-1 flex-col pt-16 lg:ml-64`}>
         <Header hasSidebar={hasSidebar} />
